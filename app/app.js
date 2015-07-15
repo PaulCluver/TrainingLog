@@ -111,7 +111,6 @@
 
     trainingLogApp.controller('viewLogEntriesCtrl', ['$scope', 'LogEntriesService', function($scope, LogEntriesService) {
         $scope.logEntries = LogEntriesService.getAllLogEntries();
-        console.log($scope);
     }]);
 
     trainingLogApp.directive('title', ['$rootScope', '$timeout',
@@ -139,6 +138,7 @@
     trainingLogApp.filter('getTotal', function() {
         return function(standing, striking, turning, changing) {
             //return standing + striking + turning + changing;
+            console.log(striking);
             return 'hello world';
         }
     })

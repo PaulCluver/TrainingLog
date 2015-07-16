@@ -3,33 +3,40 @@
     <div>
         <form name="form" novalidate ng-controller="addLogEntryCtrl">
             <div class="row">
-                <div class="large-6 columns">
+                <div class="large-4 columns">
                     <label>Date:</label>
-                    <input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2" ng-model="log.Date" name="lDate" required="">
+                    <input type="text" class="span2" ng-model="log.Date" name="lDate" value="02/16/12" data-date-format="mm/dd/yy" id="dp2" ng-model="log.Date" name="lDate" required="">
                 </div>
-                <div class="large-6 columns">
+                <div class="large-4 columns">
                     <label>Exercise Type:</label>
-                    <select class="medium" ng-model="selectedItem" ng-options="item.ID as item.Title for item in ExerciseTypeItems">                        
-                    <pre>{{selectedItem | json}}</pre>
+                    <select class="medium" ng-model="log.ExerciseType" name="lExerciseType" ng-model="selectedExerciseTypeItem" ng-options="item.ID as item.Title for item in ExerciseTypeItems" required="">                        
+                    <pre>{{selectedExerciseTypeItem | json}}</pre>
+                    </select>
+                </div>
+                <div class="large-4 columns">
+                    <label>Exercise Time (min):</label>
+                    <select class="medium" ng-model="log.ExerciseTime" name="lExerciseTime" ng-model="selectedExerciseTimeItem" ng-options="item.ID as item.Title for item in ExerciseTimeItems" required="">                         
+                    <pre>{{selectedExerciseTimeItem | json}}</pre>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="large-12 columns">
                     <label>Notes</label>
-                    <textarea ng-model="log.Note" name="lNote"></textarea>
+                    <textarea ng-model="log.Note" name="lNote" rows="15"></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="large-3 columns">
                     <input class="secondary button" ui-sref="addLogEntry"  type="button" ng-click="reset(form)" value="Reset" />
-                    <input class="button" ui-sref="viewLogEntries" type="submit" ng-click="add(log)" value="Add" />
+                    <input class="button" ui-sref="addLogEntry" type="submit" ng-click="add(log)" value="Add" />
                 </div>
                 <div class="large-4 columns">
                     <div data-alert class="alert-box alert radius" ng-show="form.$submitted">
                         <ul>
                             <li ng-show="form.lDate.$error.required">Please select a date</li>
-                            <li ng-show="form.lType.$error.required">Please select an exercise type</li>
+                            <li ng-show="form.lExerciseType.$error.required">Please select an exercise type</li>
+                            <li ng-show="form.lExerciseTime.$error.required">Please select an exercise type</li>
                         </ul>
                     </div>
                 </div>

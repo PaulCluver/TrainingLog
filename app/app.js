@@ -103,6 +103,46 @@
            {ID: '4', Title: 'Changing'}
         ];
 
+        $scope.ExerciseTimeItems = [
+           {ID: '5', Title: '05'},
+           {ID: '10', Title: '10'},
+           {ID: '15', Title: '15'},
+           {ID: '20', Title: '20'},
+           {ID: '25', Title: '25'},
+           {ID: '30', Title: '30'},
+           {ID: '35', Title: '35'},
+           {ID: '40', Title: '40'},
+           {ID: '45', Title: '45'},
+           {ID: '50', Title: '50'},
+           {ID: '55', Title: '55'},
+           {ID: '60', Title: '60'},
+           {ID: '65', Title: '65'},
+           {ID: '70', Title: '70'},
+           {ID: '75', Title: '75'},
+           {ID: '80', Title: '80'},
+           {ID: '85', Title: '85'},
+           {ID: '90', Title: '90'},
+           {ID: '95', Title: '95'},
+           {ID: '100', Title: '100'}
+        ];
+
+        $scope.newLogEntryDetails = {};
+
+        $scope.add = function(log) {
+            $scope.newLogEntryDetails = angular.copy(log);
+        };
+
+        $scope.reset = function(form) {
+
+            if (form) {
+                console.log(form);
+                form.$setPristine();
+                form.$setUntouched();
+            }
+            $scope.user = angular.copy($scope.newLogEntryDetails);
+        };
+
+        $scope.reset();
     }]);
 
     trainingLogApp.controller('editLogEntryCtrl', ['$scope', function($scope) {

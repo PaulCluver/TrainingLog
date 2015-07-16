@@ -74,3 +74,7 @@
 .inline-list a{
   color: #C86013;
 }
+
+textarea {
+    height: auto;
+}

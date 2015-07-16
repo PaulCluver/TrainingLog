@@ -3,21 +3,21 @@
 <html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)" ng-app="trainingLogApp" ng-controller="appCtrl">
 
 <head>
-    <base href="/"/>
+    <base href="/" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
     <meta name="description" content="{{description}}" />
-    <meta name="author" content="Daily Training Log"/>
-    <meta name="copyright" content="Daily Training Log (c) 2015"/
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="bower_components/zurb-foundation-npm/css/foundation.css" />
+    <meta name="author" content="Daily Training Log" />
+    <meta name="copyright" content="Daily Training Log (c) 2015" / <meta name="keywords" content="" />
+    <link rel="stylesheet" href="bower_components/zurb-foundation-npm/css/foundation.css">
+    <link rel="stylesheet" href="bower_components/foundation-datepicker/css/foundation-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css" />    
+    <link rel="assets/css/foundation-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 <body>
     <div class="row">
-
         <div class="large-12 columns">
             <nav class="top-bar" data-topbar>
                 <ul class="title-area">
@@ -28,7 +28,7 @@
                 <section class="top-bar-section">
                     <ul class="right">
                         <li>
-                            <a ui-sref="addLogEntry" style="border-left:1px solid #fff">Add Log Entry</a>                           
+                            <a ui-sref="addLogEntry" style="border-left:1px solid #fff">Add Log Entry</a>
                         </li>
                         <li>
                             <a ui-sref="editLogEntry">Edit Log Entry</a>
@@ -54,7 +54,7 @@
                 <div class="large-8 columns">
                     <ul class="inline-list right">
                         <li>
-                            <a ui-sref="addLogEntry">Add Log Entry</a>                           
+                            <a ui-sref="addLogEntry">Add Log Entry</a>
                         </li>
                         <li>
                             <a ui-sref="editLogEntry">Edit Log Entry</a>
@@ -67,33 +67,15 @@
             </div>
         </div>
     </footer>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/foundation-datepicker/js/foundation-datepicker.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-foundation/src/mm-foundation-tpls-0.6.0.js"></script>
     <script src="bower_components/ui-router/angular-ui-router.js"></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/zurb-foundation-npm/js/modernizr.js"></script>
     <script src="bower_components/zurb-foundation-npm/js/foundation/foundation.js"></script>
     <script src="bower_components/zurb-foundation-npm/js/foundation/foundation.topbar.js"></script>
-    
     <script src="app.js" type="text/javascript"></script>
-    
-    <script>
-        $(document).foundation();
-
-        var doc = document.documentElement;
-        doc.setAttribute('data-useragent', navigator.userAgent);
-        </script>
-        
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-64044465-1', 'auto');
-          ga('send', 'pageview');
-    </script>
-
 </body>
-
 </html>

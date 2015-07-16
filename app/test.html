@@ -1,43 +1,25 @@
-<div class="large-12 columns">
-    <h4>Add Log Enty</h4>
-    <div>
-        <form name="form" novalidate ng-controller="addLogEntryCtrl">
-            <div class="row">
-                <div class="large-6 columns">
-                    <label>Date:</label>
-                    <input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2" ng-model="log.Date" name="lDate" required="">
-                </div>
-                <div class="large-6 columns">
-                    <label>Exercise Type:</label>
-                    <select class="medium" ng-model="selectedItem" ng-options="item.ID as item.Title for item in ExerciseTypeItems">                        
-                    <pre>{{selectedItem | json}}</pre>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <label>Notes</label>
-                    <textarea ng-model="log.Note" name="lNote"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-3 columns">
-                    <input class="secondary button" ui-sref="addLogEntry"  type="button" ng-click="reset(form)" value="Reset" />
-                    <input class="button" ui-sref="viewLogEntries" type="submit" ng-click="add(log)" value="Add" />
-                </div>
-                <div class="large-4 columns">
-                    <div data-alert class="alert-box alert radius" ng-show="form.$submitted">
-                        <ul>
-                            <li ng-show="form.lDate.$error.required">Please select a date</li>
-                            <li ng-show="form.lType.$error.required">Please select an exercise type</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<script>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Foundation datepicker</title>    
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="bower_components/foundation-datepicker/js/foundation-datepicker.min.js"></script>
+
+    <link rel="stylesheet" href="bower_components/zurb-foundation-npm/css/foundation.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/css/foundation-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/example.css">
+</head>
+
+<body>
+    <input type="text" class="span2" value="02/16/12" data-date-format="mm/dd/yy" id="dp2">
+
+    <script>
     $(function() {
         window.prettyPrint && prettyPrint();
         $('#dp1').fdatepicker({
@@ -100,3 +82,5 @@
         }).data('datepicker');
     });
     </script>
+
+</html>

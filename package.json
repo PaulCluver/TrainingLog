@@ -1,18 +1,36 @@
 {
-  "name": "TrainingLog",
-  "version": "0.0.0",
-  "author": "Paul Cluver",
-  "description": "Martial Arts Durban",
-  "repository": "https://github.com/PaulCluver/TrainingLog",
-  "license": "MIT",
-  "dependencies": {
-    "connect-history-api-fallback": "^1.1.0",
-    "connect-pushstate": "^1.0.0"
+  "name": "TraininigLog",
+  "version": "1.0.0",
+  "description": "An application for recording training entries",
+  "main": "./build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaulCluver/TrainingLog.git"
   },
+  "engines": {
+    "node": ">=0.10.36"
+  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-connect": "2.2.0",
-    "gulp-protractor": "0.0.12",
-    "gulp-util": "^3.0.4"
-  }
+    "chai": "^3.5.0",
+    "eslint": "^2.3.0",
+    "mocha": "^2.4.5",
+    "tslint": "^3.5.0",
+    "typescript": "^1.8.7",
+    "typings": "^0.7.7"
+  },
+  "scripts": {
+    "postinstall": "typings install",
+    "build": "./node_modules/.bin/tsc -p .",
+    "pretest": "./node_modules/.bin/tsc -p .",
+    "test": "./node_modules/.bin/mocha build/test",
+    "clean": "rm -rf build/*"
+  },
+  "keywords": [
+    "Exercise",
+    "Training",
+    "Diary"
+  ],
+  "author": "Paul Cluver <paulocluver@gmail.com>",
+  "license": "MIT"
 }
